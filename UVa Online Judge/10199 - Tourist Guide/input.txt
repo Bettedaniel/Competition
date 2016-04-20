@@ -1,0 +1,49 @@
+6
+a
+b
+c
+d
+e
+f
+3
+a f
+b c
+e d
+6
+a
+b
+c
+d
+e
+f
+6
+a f
+b c
+e d
+f e
+a d
+b d
+6
+x
+y
+z
+a
+b
+c
+0
+6
+x
+y
+z
+a
+b
+c
+7
+x y
+y z
+z x
+a b
+b c
+a c
+a z
+0

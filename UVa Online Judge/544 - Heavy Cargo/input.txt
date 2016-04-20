@@ -1,0 +1,17 @@
+4 3
+Karlsruhe Stuttgart 100
+Stuttgart Ulm 80
+Ulm Muenchen 120
+Karlsruhe Muenchen
+5 5
+Karlsruhe Stuttgart 100
+Stuttgart Ulm 80
+Ulm Muenchen 120
+Karlsruhe Hamburg 220
+Hamburg Muenchen 170
+Muenchen Karlsruhe
+4 2
+a b 100
+c d 100
+a d
+0 0

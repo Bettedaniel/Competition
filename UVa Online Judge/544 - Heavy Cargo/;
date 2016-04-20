@@ -1,0 +1,62 @@
+import java.util.*;
+import java.io.*;
+
+public class Main {
+	private static BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+	private static StringTokenizer st = new StringTokenizer("");
+	private static ArrayList<Integer>[] graph;
+	private static int[][] weights, residual;
+	private static int n, r;
+	private static HashMap<Integer, String> map;
+	private static HashMap<String, Integer> map2;
+	private static HashSet<String> seen;
+
+	public static void main(String[] args) throws Exception {
+		n = readInt();
+		r = readInt();
+		int scene = 1;
+		while (n != 0 || r != 0) {
+			graph = new ArrayList[n];
+			map = new HashMap<Integer, String>();
+			map2 = new HashMap<String, Integer>();
+			seen = new HashSet<String>();
+			for (int i = 0; i < n; ++i) graph[i] = new ArrayList<Integer>();
+			int name = 0;
+			for (int i = 0; i < r; ++i) {
+				String from = readString();
+				if (!seen.contains(from)) {
+					map.put(name, from);
+					map2.put(from, name);
+					seen.add(from);
+					++name;
+				}
+				String to = readString();
+				if (!seen.contains(to)) {
+					map.put(name, to);
+					map2.put(to, name);
+					seen.add(to);
+					++name;
+				}
+				int cap = readInt();
+				graph[map2.get(to)].add(map2.get(from));
+				graph[map2.get(from)].add(map2.get(to));
+				weights[map2.get(to)][map2.get(from)] = cap;
+				weights[map2.get(from)][map2.get(to)] = cap;
+			}
+			n = readInt();
+			r = readInt();
+			++scene;
+		}
+	}
+
+	private static String readString() throws Exception {
+		while (!st.hasMoreTokens()) {
+			st = new StringTokenizer(stdin.readLine());
+		}
+		return st.nextToken();
+	}
+
+	private static int readInt() throws Exception {
+		return Integer.parseInt(readString());
+	}
+}
